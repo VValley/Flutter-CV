@@ -25,7 +25,7 @@ class _MyTimelineState extends State<MyTimeline> {
           return Text("Something went wrong");
         }
         if (!snapshot.hasData) return new Text("There is no expense");
-        List<QueryDocumentSnapshot> data = snapshot.data.docs;
+        List<QueryDocumentSnapshot> data = snapshot.data!.docs;
         return Column(children: getTimeline(data));
       },
     );
@@ -47,7 +47,7 @@ class _MyTimelineState extends State<MyTimeline> {
             doc.get('year').toString(),
             style: Theme.of(context)
                 .textTheme
-                .headline5
+                .headline5!
                 .apply(color: Colors.black),
           ),
         ),
